@@ -9,17 +9,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="日本旅遊">
     
-    <link rel="apple-touch-icon" href="https://img.icons8.com/color/512/fuji-mountain.png">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/197/197604.png?v=2">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
-        body { 
-            background-color: #F9F8F3; 
-            font-family: 'Noto Sans JP', sans-serif; 
-            -webkit-tap-highlight-color: transparent;
-            padding-top: env(safe-area-inset-top); /* 避免被瀏海擋住 */
-        }
+        body { background-color: #F9F8F3; font-family: 'Noto Sans JP', sans-serif; -webkit-tap-highlight-color: transparent; padding-top: env(safe-area-inset-top); }
         .card-transport { border-left: 4px solid #A5B4FC; }
         .card-spot { border-left: 4px solid #6EE7B7; }
         .card-restaurant { border-left: 4px solid #FCA5A5; }
@@ -30,143 +25,102 @@
 </head>
 <body class="pb-24">
     <div id="app" class="max-w-md mx-auto min-h-screen relative">
-        
         <header class="p-6 bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-stone-200 flex justify-between items-center">
             <div>
                 <h1 class="text-xl font-light tracking-[0.2em] text-stone-800">SPRING TRIP</h1>
                 <p id="current-tab-name" class="text-[10px] text-stone-400 uppercase tracking-widest italic">Itinerary</p>
             </div>
-            <div class="text-right text-[10px] text-stone-400 font-mono leading-tight">2026<br>04.18-26</div>
+            <div class="text-right text-[10px] text-stone-400 font-mono">2026.04.18-26</div>
         </header>
 
-        <main id="tab-itinerary" class="tab-content active p-4 space-y-10">
+        <main id="tab-itinerary" class="tab-content active p-4 space-y-8">
             <section>
                 <div class="flex justify-between items-end mb-4 border-b border-stone-300 pb-1">
-                    <h2 class="text-lg font-medium text-stone-700">Day 1 <span class="text-sm font-light text-stone-400">04/18 (六)</span></h2>
-                    <span class="text-[10px] text-stone-400 text-stone-400">☁️ 18°C 東京</span>
+                    <h2 class="text-lg font-medium">Day 1 <span class="text-sm font-light text-stone-400">04/18</span></h2>
+                    <span class="text-[10px] text-stone-400 font-bold">空港 -> 押上</span>
                 </div>
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-100 mb-4 card-transport">
-                    <div class="flex justify-between text-[10px] mb-2"><span class="text-indigo-500 font-bold uppercase">Transport</span><span>08:30</span></div>
                     <h3 class="font-bold">京成電鐵 Access 特急</h3>
-                    <p class="text-xs text-stone-500 mt-1 italic">機場 -> 押上站。步行至 Wing Stay。</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Wing+Stay+Oshiage" target="_blank" class="mt-4 block text-center bg-stone-50 py-3 rounded-xl text-xs font-semibold text-stone-600 border border-stone-100">📍 導航至住宿</a>
+                    <p class="text-xs text-stone-500 mt-1 italic">08:30 啟程</p>
+                    <a href="https://www.google.com/maps" target="_blank" class="mt-4 block text-center bg-stone-50 py-3 rounded-xl text-xs font-semibold">📍 導航至住宿</a>
                 </div>
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-100 mb-4 card-spot">
-                    <div class="flex justify-between text-[10px] mb-2"><span class="text-emerald-500 font-bold uppercase">Explore</span><span>11:30</span></div>
-                    <h3 class="font-bold">龜有 (兩津勘吉巡禮)</h3>
-                    <div class="flex flex-wrap gap-1 mt-2">
-                        <span class="bg-red-50 text-red-500 text-[10px] px-2 py-0.5 rounded font-bold">必吃美食：沾麵道</span>
-                        <span class="bg-orange-50 text-orange-500 text-[10px] px-2 py-0.5 rounded font-bold">必點：兩津銅鑼燒</span>
-                    </div>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Kameari+Station" target="_blank" class="mt-4 block text-center bg-stone-50 py-3 rounded-xl text-xs font-semibold text-stone-600 border border-stone-100">📍 啟動導航</a>
+                    <h3 class="font-bold">龜有 (兩津勘吉)</h3>
+                    <p class="text-xs text-stone-500 mt-1">收集 15 座雕像</p>
+                    <a href="https://www.google.com/maps" target="_blank" class="mt-4 block text-center bg-stone-50 py-3 rounded-xl text-xs font-semibold">📍 啟動導航</a>
                 </div>
             </section>
 
-            <section>
+            <section class="opacity-50">
                 <div class="flex justify-between items-end mb-4 border-b border-stone-300 pb-1">
-                    <h2 class="text-lg font-medium text-stone-700">Day 2 <span class="text-sm font-light text-stone-400">04/19 (日)</span></h2>
-                    <span class="text-[10px] text-stone-400 text-stone-400">☀️ 20°C 晴空塔</span>
+                    <h2 class="text-lg font-medium">Day 3-9 <span class="text-sm font-light text-stone-400">04/20-26</span></h2>
                 </div>
-                <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-100 mb-4 card-restaurant">
-                    <div class="flex justify-between text-[10px] mb-2"><span class="text-rose-500 font-bold uppercase">Dining</span><span>10:30</span></div>
-                    <h3 class="font-bold font-stone-800">晴空塔 敘敘苑</h3>
-                    <div class="flex flex-wrap gap-1 mt-2">
-                        <span class="bg-purple-100 text-purple-600 text-[10px] px-2 py-0.5 rounded font-bold">重要預約</span>
-                        <span class="bg-rose-50 text-rose-600 text-[10px] px-2 py-0.5 rounded font-bold">必點：牛舌套餐</span>
-                    </div>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Jojoen+Skytree" target="_blank" class="mt-4 block text-center bg-stone-50 py-3 rounded-xl text-xs font-semibold text-stone-600">📍 導航至晴空塔</a>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-100 mb-4 card-spot text-center py-10">
+                    <p class="text-xs text-stone-400">其餘行程已載入，點擊資訊頁查看概覽</p>
                 </div>
             </section>
         </main>
 
         <main id="tab-info" class="tab-content p-6 space-y-6">
             <div class="bg-white rounded-3xl p-6 shadow-sm">
-                <h3 class="text-sm font-bold border-b border-stone-100 pb-3 mb-4 flex items-center gap-2">✈️ 航班資訊</h3>
-                <div class="space-y-4">
-                    <div class="flex justify-between italic text-xs"><span>04/18 02:00 (TPE)</span><span class="font-bold">樂桃 MM620</span></div>
-                    <div class="flex justify-between italic text-xs"><span>04/26 16:20 (NRT)</span><span class="font-bold text-orange-500">星宇 JX803</span></div>
-                </div>
-            </div>
-            <div class="bg-white rounded-3xl p-6 shadow-sm border-l-4 border-emerald-400">
-                <h3 class="text-sm font-bold mb-4 text-stone-800">🏠 住宿資訊</h3>
-                <div class="space-y-2 text-xs text-stone-500">
-                    <p>4/18: Wing Stay (押上)</p>
-                    <p>4/19-24: Airbnb 中井 (新宿區)</p>
-                    <p>4/24-25: 浩庵露營場</p>
-                </div>
-            </div>
-            <div class="bg-white rounded-3xl p-6 shadow-sm border-l-4 border-red-400">
-                <h3 class="text-sm font-bold mb-2 text-red-600">☎️ 緊急聯絡</h3>
-                <p class="text-xs leading-loose text-stone-500">警局：110 | 消防救護：119<br>駐日代表處：+81-3-3280-7811</p>
+                <h3 class="text-sm font-bold border-b border-stone-100 pb-3 mb-4">✈️ 航班與住宿全覽</h3>
+                <p class="text-xs leading-loose text-stone-500">
+                    4/18 樂桃 MM620 (02:00)<br>
+                    4/26 星宇 JX803 (16:20)<br><br>
+                    住宿：Wing Stay / Airbnb 中井 / 浩庵
+                </p>
             </div>
         </main>
 
-        <main id="tab-budget" class="tab-content p-6">
-            <div class="bg-stone-800 rounded-3xl p-8 text-white mb-8 shadow-2xl">
-                <p class="text-[10px] opacity-50 uppercase tracking-[0.2em] mb-2">Total Expense</p>
+        <main id="tab-budget" class="tab-content p-6 text-center">
+            <div class="bg-stone-800 rounded-3xl p-8 text-white mb-8">
+                <p class="text-[10px] opacity-50 uppercase mb-2">Total Expense</p>
                 <h2 class="text-4xl font-light">¥ <span id="total-amount">0</span></h2>
             </div>
-            <div class="space-y-4 bg-white p-6 rounded-3xl shadow-sm">
-                <input id="exp-name" type="text" placeholder="品名 (例如：敘敘苑)" class="w-full p-4 rounded-2xl bg-stone-50 border-none text-sm focus:ring-2 focus:ring-stone-200">
-                <input id="exp-price" type="number" placeholder="日幣金額" class="w-full p-4 rounded-2xl bg-stone-50 border-none text-sm focus:ring-2 focus:ring-stone-200">
-                <button onclick="addExpense()" class="w-full bg-stone-800 text-white p-4 rounded-2xl text-sm font-bold active:scale-95 transition-transform">記錄一筆支出</button>
-            </div>
-            <div class="mt-8 px-2">
-                <ul id="exp-list" class="space-y-3 text-sm"></ul>
-            </div>
+            <input id="exp-name" type="text" placeholder="品名" class="w-full p-4 mb-4 rounded-2xl bg-white border-none text-sm">
+            <input id="exp-price" type="number" placeholder="金額" class="w-full p-4 mb-4 rounded-2xl bg-white border-none text-sm">
+            <button onclick="addExpense()" class="w-full bg-stone-800 text-white p-4 rounded-2xl font-bold">記錄</button>
+            <ul id="exp-list" class="mt-6 text-left space-y-2"></ul>
         </main>
 
-        <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/95 backdrop-blur-md border-t border-stone-100 flex justify-around p-4 shadow-2xl rounded-t-[2.5rem] z-50">
-            <button onclick="switchTab('itinerary', this)" class="flex flex-col items-center gap-1 nav-active transition-all">
-                <span class="text-xl">🗓️</span><span class="text-[9px] uppercase tracking-tighter">Itinerary</span>
+        <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/95 backdrop-blur-md border-t border-stone-100 flex justify-around p-4 shadow-2xl rounded-t-[2.5rem]">
+            <button onclick="switchTab('itinerary', this)" class="flex flex-col items-center gap-1 nav-active">
+                <span class="text-xl">🗓️</span><span class="text-[9px]">行程</span>
             </button>
-            <button onclick="switchTab('info', this)" class="flex flex-col items-center gap-1 text-stone-300 transition-all">
-                <span class="text-xl">✈️</span><span class="text-[9px] uppercase tracking-tighter">Info</span>
+            <button onclick="switchTab('info', this)" class="flex flex-col items-center gap-1 text-stone-300">
+                <span class="text-xl">✈️</span><span class="text-[9px]">資訊</span>
             </button>
-            <button onclick="switchTab('budget', this)" class="flex flex-col items-center gap-1 text-stone-300 transition-all">
-                <span class="text-xl">💰</span><span class="text-[9px] uppercase tracking-tighter">Budget</span>
+            <button onclick="switchTab('budget', this)" class="flex flex-col items-center gap-1 text-stone-300">
+                <span class="text-xl">💰</span><span class="text-[9px]">記帳</span>
             </button>
         </nav>
     </div>
 
     <script>
         function switchTab(tabName, el) {
-            // 隱藏所有分頁
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            // 顯示點選的分頁
             document.getElementById('tab-' + tabName).classList.add('active');
-            
-            // 更新按鈕樣式
             document.querySelectorAll('nav button').forEach(btn => {
-                btn.classList.remove('nav-active', 'text-stone-800');
+                btn.classList.remove('nav-active');
                 btn.classList.add('text-stone-300');
             });
             el.classList.add('nav-active');
             el.classList.remove('text-stone-300');
-            
-            document.getElementById('current-tab-name').innerText = tabName;
             window.scrollTo(0,0);
         }
-
-        let total = 0;
         function addExpense() {
-            const nameEl = document.getElementById('exp-name');
-            const priceEl = document.getElementById('exp-price');
-            const name = nameEl.value;
-            const price = priceEl.value;
-            
+            const name = document.getElementById('exp-name').value;
+            const price = document.getElementById('exp-price').value;
             if(!name || !price) return;
-            
-            total += parseInt(price);
-            document.getElementById('total-amount').innerText = total.toLocaleString();
-            
+            const totalEl = document.getElementById('total-amount');
+            const currentTotal = parseInt(totalEl.innerText.replace(/,/g, '')) + parseInt(price);
+            totalEl.innerText = currentTotal.toLocaleString();
             const li = document.createElement('li');
-            li.className = "flex justify-between items-center bg-white p-4 rounded-2xl shadow-sm border border-stone-50";
-            li.innerHTML = `<span class="text-stone-700 font-medium">${name}</span><span class="font-mono font-bold text-stone-800">¥${parseInt(price).toLocaleString()}</span>`;
+            li.className = "flex justify-between bg-white p-3 rounded-xl shadow-sm text-sm";
+            li.innerHTML = `<span>${name}</span><b>¥${parseInt(price).toLocaleString()}</b>`;
             document.getElementById('exp-list').prepend(li);
-            
-            nameEl.value = '';
-            priceEl.value = '';
+            document.getElementById('exp-name').value = '';
+            document.getElementById('exp-price').value = '';
         }
     </script>
 </body>
