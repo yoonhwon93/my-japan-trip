@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本自由行 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #fcfaf2; font-family: "Helvetica Neue", Arial, "Heiti TC", sans-serif; }
+        .card-transport { border-left: 4px solid #a5b4fc; }
+        .card-spot { border-left: 4px solid #6ee7b7; }
+        .card-restaurant { border-left: 4px solid #fca5a5; }
+    </style>
+</head>
+<body class="pb-20">
+    <div id="app" class="max-w-md mx-auto">
+        <header class="p-6 bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-stone-200">
+            <h1 class="text-xl font-light tracking-widest text-stone-800 text-center">2026 TOKYO TRAVEL</h1>
+            <p class="text-[10px] text-stone-400 text-center mt-1">4/18 - 4/26 SPRING</p>
+        </header>
+
+        <main class="p-4 space-y-8">
+            <section>
+                <div class="flex justify-between items-end mb-4 border-b border-stone-300 pb-1">
+                    <h2 class="text-lg font-medium text-stone-700">Day 1 <span class="text-sm font-light">04/18 (六)</span></h2>
+                    <span class="text-xs text-stone-400">☁️ 18°C 東京</span>
+                </div>
+
+                <div class="bg-white rounded-xl p-4 shadow-sm mb-3 card-transport">
+                    <div class="flex justify-between text-[10px] text-stone-400">
+                        <span>08:30</span>
+                        <span class="bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">交通</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 mt-1">京成電鐵 Access 特急</h3>
+                    <p class="text-xs text-stone-500 mt-1">機場第一航廈 → 押上站 (直達約 55 分)</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=押上駅" target="_blank" class="mt-3 block text-center bg-stone-100 py-2 rounded-lg text-xs font-medium text-stone-600">📍 啟動導航</a>
+                </div>
+
+                <div class="bg-white rounded-xl p-4 shadow-sm mb-3 card-spot">
+                    <div class="flex justify-between text-[10px] text-stone-400">
+                        <span>11:30</span>
+                        <span class="bg-emerald-100 text-emerald-600 px-2 py-0.5 rounded-full">景點</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 mt-1">龜有 (兩津勘吉巡禮)</h3>
+                    <div class="flex flex-wrap gap-1 mt-2">
+                        <span class="bg-red-50 text-red-500 text-[10px] px-2 py-0.5 rounded">#必吃：沾麵道</span>
+                        <span class="bg-orange-50 text-orange-500 text-[10px] px-2 py-0.5 rounded">#必點：兩津銅鑼燒</span>
+                    </div>
+                    <p class="text-xs text-stone-500 mt-2 leading-relaxed italic">攻略：出站找兩津雕像地圖，收集全 15 座雕像。</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=亀有駅" target="_blank" class="mt-3 block text-center bg-stone-100 py-2 rounded-lg text-xs font-medium text-stone-600">📍 啟動導航</a>
+                </div>
+            </section>
+        </main>
+
+        <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/90 backdrop-blur-md border-t border-stone-200 flex justify-around p-3 shadow-lg">
+            <div class="text-[10px] flex flex-col items-center text-stone-800 font-bold"><span>🗓️</span><span>行程</span></div>
+            <div class="text-[10px] flex flex-col items-center text-stone-400"><span>🏨</span><span>住宿</span></div>
+            <div class="text-[10px] flex flex-col items-center text-stone-400"><span>💰</span><span>記帳</span></div>
+        </nav>
+    </div>
+</body>
+</html>
