@@ -2,16 +2,24 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>日本自由行 2026</title>
+    
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="日本旅遊">
-    <link rel="apple-touch-icon" href="https://www.google.com/search?q=https://www.google.com/maps/search/%3Fapi%3D1%26query%3DUeno%2BHotel">
+    
+    <link rel="apple-touch-icon" href="https://img.icons8.com/color/512/fuji-mountain.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
-        body { background-color: #F9F8F3; font-family: 'Noto Sans JP', sans-serif; -webkit-tap-highlight-color: transparent; }
+        body { 
+            background-color: #F9F8F3; 
+            font-family: 'Noto Sans JP', sans-serif; 
+            -webkit-tap-highlight-color: transparent;
+            padding-top: env(safe-area-inset-top); /* 避免被瀏海擋住 */
+        }
         .card-transport { border-left: 4px solid #A5B4FC; }
         .card-spot { border-left: 4px solid #6EE7B7; }
         .card-restaurant { border-left: 4px solid #FCA5A5; }
@@ -34,14 +42,14 @@
         <main id="tab-itinerary" class="tab-content active p-4 space-y-10">
             <section>
                 <div class="flex justify-between items-end mb-4 border-b border-stone-300 pb-1">
-                    <h2 class="text-lg font-medium">Day 1 <span class="text-sm font-light text-stone-400">04/18 (六)</span></h2>
-                    <span class="text-[10px] text-stone-400">☁️ 18°C 東京</span>
+                    <h2 class="text-lg font-medium text-stone-700">Day 1 <span class="text-sm font-light text-stone-400">04/18 (六)</span></h2>
+                    <span class="text-[10px] text-stone-400 text-stone-400">☁️ 18°C 東京</span>
                 </div>
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-100 mb-4 card-transport">
                     <div class="flex justify-between text-[10px] mb-2"><span class="text-indigo-500 font-bold uppercase">Transport</span><span>08:30</span></div>
                     <h3 class="font-bold">京成電鐵 Access 特急</h3>
-                    <p class="text-xs text-stone-500 mt-1">機場 -> 押上站。步行至住宿寄行李。</p>
-                    <a href="https://maps.app.goo.gl/yioAGknaCgnPjQwh8寄放行李" target="_blank" class="mt-4 block text-center bg-stone-50 py-3 rounded-xl text-xs font-semibold text-stone-600 border border-stone-100">📍 導航至住宿</a>
+                    <p class="text-xs text-stone-500 mt-1 italic">機場 -> 押上站。步行至 Wing Stay。</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Wing+Stay+Oshiage" target="_blank" class="mt-4 block text-center bg-stone-50 py-3 rounded-xl text-xs font-semibold text-stone-600 border border-stone-100">📍 導航至住宿</a>
                 </div>
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-100 mb-4 card-spot">
                     <div class="flex justify-between text-[10px] mb-2"><span class="text-emerald-500 font-bold uppercase">Explore</span><span>11:30</span></div>
@@ -50,66 +58,23 @@
                         <span class="bg-red-50 text-red-500 text-[10px] px-2 py-0.5 rounded font-bold">必吃美食：沾麵道</span>
                         <span class="bg-orange-50 text-orange-500 text-[10px] px-2 py-0.5 rounded font-bold">必點：兩津銅鑼燒</span>
                     </div>
-                    <p class="text-xs text-stone-500 mt-2 italic leading-relaxed">景點故事：尋找 15 座兩津雕像，Ario 購物中心內有派出所場景。</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=龜有站" target="_blank" class="mt-3 block text-center bg-stone-50 py-2 rounded-lg text-xs font-medium text-stone-600">📍 啟動導航</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Kameari+Station" target="_blank" class="mt-4 block text-center bg-stone-50 py-3 rounded-xl text-xs font-semibold text-stone-600 border border-stone-100">📍 啟動導航</a>
                 </div>
             </section>
 
             <section>
                 <div class="flex justify-between items-end mb-4 border-b border-stone-300 pb-1">
-                    <h2 class="text-lg font-medium">Day 2 <span class="text-sm font-light text-stone-400">04/19 (日)</span></h2>
-                    <span class="text-[10px] text-stone-400">☀️ 20°C 晴空塔</span>
+                    <h2 class="text-lg font-medium text-stone-700">Day 2 <span class="text-sm font-light text-stone-400">04/19 (日)</span></h2>
+                    <span class="text-[10px] text-stone-400 text-stone-400">☀️ 20°C 晴空塔</span>
                 </div>
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-100 mb-4 card-restaurant">
                     <div class="flex justify-between text-[10px] mb-2"><span class="text-rose-500 font-bold uppercase">Dining</span><span>10:30</span></div>
-                    <h3 class="font-bold">晴空塔 敘敘苑</h3>
+                    <h3 class="font-bold font-stone-800">晴空塔 敘敘苑</h3>
                     <div class="flex flex-wrap gap-1 mt-2">
                         <span class="bg-purple-100 text-purple-600 text-[10px] px-2 py-0.5 rounded font-bold">重要預約</span>
                         <span class="bg-rose-50 text-rose-600 text-[10px] px-2 py-0.5 rounded font-bold">必點：牛舌套餐</span>
                     </div>
-                    <a href="https://www.google.com/maps/search/?api=1&query=新宿站" target="_blank" class="mt-4 block text-center bg-stone-50 py-3 rounded-xl text-xs font-semibold text-stone-600">📍 導航至新宿寄放行李</a>
-                </div>
-            </section>
-
-            <section>
-                <div class="flex justify-between items-end mb-4 border-b border-stone-300 pb-1">
-                    <h2 class="text-lg font-medium">Day 3 <span class="text-sm font-light text-stone-400">04/20 (一)</span></h2>
-                    <span class="text-[10px] text-stone-400">🌊 19°C 湘南・橫濱</span>
-                </div>
-                <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-100 mb-4 card-spot">
-                    <div class="flex justify-between text-[10px] mb-2"><span class="text-emerald-500 font-bold uppercase">Cycle</span><span>09:00</span></div>
-                    <h3 class="font-bold">逗子・葉山單車巡禮</h3>
-                    <p class="text-xs text-stone-500 mt-1 italic">使用 HELLO CYCLING 騎行。下午前往鎌倉、橫濱纜車。</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=逗子海岸" target="_blank" class="mt-4 block text-center bg-stone-50 py-3 rounded-xl text-xs font-semibold text-stone-600">📍 導航至單車站</a>
-                </div>
-            </section>
-
-            <section>
-                <div class="flex justify-between items-end mb-4 border-b border-stone-300 pb-1">
-                    <h2 class="text-lg font-medium">Day 6 <span class="text-sm font-light text-stone-400">04/23 (四)</span></h2>
-                    <span class="text-[10px] text-stone-400">🐎 18°C 夜間賽馬</span>
-                </div>
-                <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-100 mb-4 card-restaurant">
-                    <div class="flex justify-between text-[10px] mb-2"><span class="text-rose-500 font-bold uppercase">Night Event</span><span>18:00</span></div>
-                    <h3 class="font-bold">大井競馬場 Twinkle Race</h3>
-                    <div class="flex flex-wrap gap-1 mt-2">
-                        <span class="bg-stone-800 text-white text-[10px] px-2 py-0.5 rounded font-bold">攻略：夜間賽馬</span>
-                        <span class="bg-amber-100 text-amber-700 text-[10px] px-2 py-0.5 rounded font-bold">必買：馬蹄鐵御守</span>
-                    </div>
-                    <a href="https://www.google.com/maps/search/?api=1&query=大井競馬場" target="_blank" class="mt-4 block text-center bg-stone-50 py-3 rounded-xl text-xs font-semibold text-stone-600">📍 啟動導航</a>
-                </div>
-            </section>
-
-            <section>
-                <div class="flex justify-between items-end mb-4 border-b border-stone-300 pb-1">
-                    <h2 class="text-lg font-medium">Day 7-9 <span class="text-sm font-light text-stone-400">04/24-26</span></h2>
-                    <span class="text-[10px] text-stone-400">🗻 12°C 富士河口湖</span>
-                </div>
-                <div class="bg-white rounded-2xl p-5 shadow-sm border border-stone-100 mb-4 card-transport">
-                    <div class="flex justify-between text-[10px] mb-2"><span class="text-indigo-500 font-bold uppercase">Car Rental</span><span>09:00</span></div>
-                    <h3 class="font-bold">河口湖租車自駕</h3>
-                    <p class="text-xs text-stone-500 mt-1 italic">取車後前往浩庵露營場，看富士山。4/26 16:00 抵達機場。</p>
-                    <a href="https://maps.app.goo.gl/RAKd69y87ZMBjEry9租車" target="_blank" class="mt-4 block text-center bg-stone-50 py-3 rounded-xl text-xs font-semibold text-stone-600">📍 導航至租車處</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Jojoen+Skytree" target="_blank" class="mt-4 block text-center bg-stone-50 py-3 rounded-xl text-xs font-semibold text-stone-600">📍 導航至晴空塔</a>
                 </div>
             </section>
         </main>
@@ -123,7 +88,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-3xl p-6 shadow-sm border-l-4 border-emerald-400">
-                <h3 class="text-sm font-bold mb-4">🏠 住宿資訊</h3>
+                <h3 class="text-sm font-bold mb-4 text-stone-800">🏠 住宿資訊</h3>
                 <div class="space-y-2 text-xs text-stone-500">
                     <p>4/18: Wing Stay (押上)</p>
                     <p>4/19-24: Airbnb 中井 (新宿區)</p>
@@ -132,3 +97,77 @@
             </div>
             <div class="bg-white rounded-3xl p-6 shadow-sm border-l-4 border-red-400">
                 <h3 class="text-sm font-bold mb-2 text-red-600">☎️ 緊急聯絡</h3>
+                <p class="text-xs leading-loose text-stone-500">警局：110 | 消防救護：119<br>駐日代表處：+81-3-3280-7811</p>
+            </div>
+        </main>
+
+        <main id="tab-budget" class="tab-content p-6">
+            <div class="bg-stone-800 rounded-3xl p-8 text-white mb-8 shadow-2xl">
+                <p class="text-[10px] opacity-50 uppercase tracking-[0.2em] mb-2">Total Expense</p>
+                <h2 class="text-4xl font-light">¥ <span id="total-amount">0</span></h2>
+            </div>
+            <div class="space-y-4 bg-white p-6 rounded-3xl shadow-sm">
+                <input id="exp-name" type="text" placeholder="品名 (例如：敘敘苑)" class="w-full p-4 rounded-2xl bg-stone-50 border-none text-sm focus:ring-2 focus:ring-stone-200">
+                <input id="exp-price" type="number" placeholder="日幣金額" class="w-full p-4 rounded-2xl bg-stone-50 border-none text-sm focus:ring-2 focus:ring-stone-200">
+                <button onclick="addExpense()" class="w-full bg-stone-800 text-white p-4 rounded-2xl text-sm font-bold active:scale-95 transition-transform">記錄一筆支出</button>
+            </div>
+            <div class="mt-8 px-2">
+                <ul id="exp-list" class="space-y-3 text-sm"></ul>
+            </div>
+        </main>
+
+        <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/95 backdrop-blur-md border-t border-stone-100 flex justify-around p-4 shadow-2xl rounded-t-[2.5rem] z-50">
+            <button onclick="switchTab('itinerary', this)" class="flex flex-col items-center gap-1 nav-active transition-all">
+                <span class="text-xl">🗓️</span><span class="text-[9px] uppercase tracking-tighter">Itinerary</span>
+            </button>
+            <button onclick="switchTab('info', this)" class="flex flex-col items-center gap-1 text-stone-300 transition-all">
+                <span class="text-xl">✈️</span><span class="text-[9px] uppercase tracking-tighter">Info</span>
+            </button>
+            <button onclick="switchTab('budget', this)" class="flex flex-col items-center gap-1 text-stone-300 transition-all">
+                <span class="text-xl">💰</span><span class="text-[9px] uppercase tracking-tighter">Budget</span>
+            </button>
+        </nav>
+    </div>
+
+    <script>
+        function switchTab(tabName, el) {
+            // 隱藏所有分頁
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            // 顯示點選的分頁
+            document.getElementById('tab-' + tabName).classList.add('active');
+            
+            // 更新按鈕樣式
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('nav-active', 'text-stone-800');
+                btn.classList.add('text-stone-300');
+            });
+            el.classList.add('nav-active');
+            el.classList.remove('text-stone-300');
+            
+            document.getElementById('current-tab-name').innerText = tabName;
+            window.scrollTo(0,0);
+        }
+
+        let total = 0;
+        function addExpense() {
+            const nameEl = document.getElementById('exp-name');
+            const priceEl = document.getElementById('exp-price');
+            const name = nameEl.value;
+            const price = priceEl.value;
+            
+            if(!name || !price) return;
+            
+            total += parseInt(price);
+            document.getElementById('total-amount').innerText = total.toLocaleString();
+            
+            const li = document.createElement('li');
+            li.className = "flex justify-between items-center bg-white p-4 rounded-2xl shadow-sm border border-stone-50";
+            li.innerHTML = `<span class="text-stone-700 font-medium">${name}</span><span class="font-mono font-bold text-stone-800">¥${parseInt(price).toLocaleString()}</span>`;
+            document.getElementById('exp-list').prepend(li);
+            
+            nameEl.value = '';
+            priceEl.value = '';
+        }
+    </script>
+</body>
+</html>
