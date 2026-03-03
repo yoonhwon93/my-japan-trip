@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="日本旅遊">
     
-    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj4KICA8cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgZmlsbD0iI0Y4RjdGMiIgcng9IjQwIi8+CiAgPGNpcmNsZSBjeD0iOTAiIGN5PSI5MCIgcj0iNDUiIGZpbGw9IiNFNjAwMTIiLz4KICA8cGF0aCBkPSJNOTAgNDVDOTAgNDUgMTE1LjkxIDc4LjkxIDEzMS45MSA5OC45MUMxMzEuOTEgOTguOTEgMTAyLjQ1IDExOC4xOCA2NS40NSAxMDAuOTFDNjUuNDUgMTAwLjkxIDc0LjA5IDc3LjczIDkwIDQ1WiIgZmlsbD0id2hpdGUiLz4KICA8cGF0aCBkPSJNOTAgNDVDNzQuMDkgNzcuNzMgNjUuNDUgMTAwLjkxIDY1LjQ1IDEwMC45MUM2NS40NSAxMDAuOTEgNDkuNDQgODQuOTQgMzAuOTQgNjkuNDVDMzAuOTQgNjkuNDUgNTUuNDUgNDguMTggOTAgNDVaIiBmaWxsPSJ3aGl0ZSIvPgogIDxwYXRoIGQ9Ik05MCA0NUM4MS45MSA3MC45MSA1NC4wOSA3My42MyA1NC4wOSA3My42M0M1NC4wOSA3My42MyA2NC43MyA0Ni44OSA5MCA0NVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj4KICA8cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgZmlsbD0iI0Y4RjdGMiIgcng9IjQwIi8+CiAgPGNpcmNsZSBjeD0iOTAiIGN5PSI5MCIgcj0iNDUiIGZpbGw9IiNFNjAwMTIiLz4KICA8cGF0aCBkPSJNOTAgNDVDOTAgNDUgMTE1IDc5IDEzMSA5OUMxMzEgOTkgMTAyIDExOCA2NSAxMDFDNjUgMTAxIDc0IDc4IDkwIDQ1WiIgZmlsbD0id2hpdGUiLz4KICA8cGF0aCBkPSJNOTAgNDVDNzQgNzggNjUgMTAxIDY1IDEwMUM2NSAxMDEgNDkgODUgMzEgNjlDMzEgNjkgNTUgNDggOTAgNDVaIiBmaWxsPSJ3aGl0ZSIvPgogIDxwYXRoIGQ9Ik05MCA0NUM4MiA3MSA1NCA3NCA1NCA3NEM1NCA3NCA2NSA0NyA5MCA0NVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -26,8 +26,12 @@
         .timeline-item { position: relative; padding-left: 2rem; border-left: 1px solid #E5E7EB; margin-bottom: 1.5rem; }
         .timeline-item::before { content: ''; position: absolute; left: -5px; top: 0; width: 9px; height: 9px; background: #D1D5DB; border-radius: 50%; }
         .timeline-active::before { background: #1A1A1A; width: 11px; height: 11px; left: -6px; }
+        
+        /* 導遊彈窗樣式 */
         .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-blur: 4px; }
         .modal-content { background: white; margin: 15% auto; padding: 24px; border-radius: 24px; width: 85%; max-width: 350px; position: relative; }
+        
+        /* 日式極簡圖示 */
         .jp-icon { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     </style>
 </head>
@@ -35,34 +39,30 @@
     <div class="max-w-md mx-auto">
         <header class="p-6 bg-white sticky top-0 z-50 flex justify-between items-end border-b border-stone-100">
             <div>
-                <h1 class="text-2xl font-bold tracking-tighter">SPRING TRIP</h1>
+                <h1 class="text-2xl font-bold tracking-tighter uppercase">Spring Trip</h1>
                 <p class="text-[10px] text-stone-400 font-mono tracking-widest uppercase">Tokyo & Fujisan 2026</p>
             </div>
             <div class="w-10 h-10">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
-                    <circle cx="90" cy="90" r="45" fill="#E60012"/>
-                    <path d="M90 45C90 45 115.91 78.91 131.91 98.91C131.91 98.91 102.45 118.18 65.45 100.91C65.45 100.91 74.09 77.73 90 45Z" fill="white"/>
-                    <path d="M90 45C74.09 77.73 65.45 100.91 65.45 100.91C65.45 100.91 49.44 84.94 30.94 69.45C30.94 69.45 55.45 48.18 90 45Z" fill="white"/>
-                    <path d="M90 45C81.91 70.91 54.09 73.63 54.09 73.63C54.09 73.63 64.73 46.89 90 45Z" fill="white"/>
-                </svg>
+                <svg viewBox="0 0 180 180"><circle cx="90" cy="90" r="45" fill="#E60012"/><path d="M90 45C90 45 115 79 131 99C131 99 102 118 65 101C65 101 74 78 90 45Z" fill="white"/><path d="M90 45C74 78 65 101 65 101C65 101 49 85 31 69C31 69 55 48 90 45Z" fill="white"/><path d="M90 45C82 71 54 74 54 74C54 74 65 47 90 45Z" fill="white"/></svg>
             </div>
         </header>
 
         <div class="bg-white overflow-x-auto whitespace-nowrap p-4 sticky top-[73px] z-40 border-b border-stone-100 no-scrollbar">
             <div class="flex gap-2" id="day-selector">
-                <button onclick="showDay(1)" class="day-tab active px-5 py-2 rounded-full text-xs font-bold bg-stone-100">D1</button>
-                <button onclick="showDay(2)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100">D2</button>
-                <button onclick="showDay(3)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100">D3</button>
-                <button onclick="showDay(4)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100">D4</button>
-                <button onclick="showDay(5)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100">D5</button>
-                <button onclick="showDay(6)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100">D6</button>
-                <button onclick="showDay(7)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100">D7</button>
-                <button onclick="showDay(8)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100">D8</button>
-                <button onclick="showDay(9)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100">D9</button>
+                <button onclick="showDay(1)" class="day-tab active px-5 py-2 rounded-full text-xs font-bold bg-stone-100 transition-all">D1</button>
+                <button onclick="showDay(2)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100 transition-all">D2</button>
+                <button onclick="showDay(3)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100 transition-all">D3</button>
+                <button onclick="showDay(4)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100 transition-all">D4</button>
+                <button onclick="showDay(5)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100 transition-all">D5</button>
+                <button onclick="showDay(6)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100 transition-all">D6</button>
+                <button onclick="showDay(7)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100 transition-all">D7</button>
+                <button onclick="showDay(8)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100 transition-all">D8</button>
+                <button onclick="showDay(9)" class="day-tab px-5 py-2 rounded-full text-xs font-bold bg-stone-100 transition-all">D9</button>
             </div>
         </div>
 
         <main id="tab-itinerary" class="tab-content active p-6">
+            
             <div id="day-content-1" class="day-content active space-y-6">
                 <div class="flex items-center justify-between bg-white p-4 rounded-2xl border border-stone-100 shadow-sm">
                     <div class="flex items-center gap-3">
@@ -75,10 +75,12 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="mb-4">
                     <h2 class="text-xl font-bold mb-4">04/18 (六) 淺草巡禮</h2>
-                    <img src="https://images.unsplash.com/photo-1542931287-023b922fa89b?auto=format&fit=crop&w=800&q=80" class="w-full h-40 object-cover rounded-3xl shadow-sm mb-4">
+                    <img src="https://images.unsplash.com/photo-1542931287-023b922fa89b?auto=format&fit=crop&w=800&q=80" class="w-full h-40 object-cover rounded-3xl shadow-sm mb-4" alt="Asakusa">
                 </div>
+
                 <div class="space-y-3">
                     <div onclick="openGuide('nrt')" class="bg-white p-5 rounded-3xl border border-stone-100 shadow-sm active:scale-95 transition-all">
                         <div class="flex justify-between items-center">
@@ -106,10 +108,12 @@
                 <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">10:30</span><h3 class="font-bold text-sm">敘敘苑午餐</h3></div>
                 <div class="timeline-item"><span class="text-[10px] font-bold text-stone-400">13:00</span><h3 class="font-bold text-sm">晴空塔商圈</h3></div>
             </div>
+            
             <div id="day-content-3" class="day-content space-y-2">
                 <div class="mb-6"><h2 class="text-xl font-bold">04/20 (一) 湘南橫濱</h2></div>
-                <div class="timeline-item timeline-active"><h3 class="font-bold text-sm">前往鐮倉</h3></div>
+                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">09:00</span><h3 class="font-bold text-sm">前往鐮倉</h3></div>
             </div>
+
             <div id="day-content-4" class="day-content space-y-2"><div class="mb-6"><h2 class="text-xl font-bold">04/21 (二) 川越池袋</h2></div></div>
             <div id="day-content-5" class="day-content space-y-2"><div class="mb-6"><h2 class="text-xl font-bold">04/22 (三) 迪士尼</h2></div></div>
             <div id="day-content-6" class="day-content space-y-2"><div class="mb-6"><h2 class="text-xl font-bold">04/23 (四) 東京塔賽馬</h2></div></div>
@@ -132,13 +136,10 @@
         </div>
 
         <main id="tab-info" class="tab-content p-6 space-y-6">
-            <h2 class="text-lg font-bold text-stone-800 flex items-center gap-2">航班與住宿</h2>
+            <h2 class="text-lg font-bold text-stone-800">航班與住宿資訊</h2>
             <div class="bg-white rounded-3xl p-5 shadow-sm border border-stone-100">
-                <h3 class="font-bold text-sm">去程: 樂桃 MM620</h3>
-                <p class="text-xs text-stone-500 mt-2">02:00 起飛 -> 06:30 抵達</p>
-            </div>
-            <div class="bg-white rounded-3xl p-5 shadow-sm border border-stone-100">
-                <h3 class="font-bold text-sm">D1 住宿: Wing Stay (押上)</h3>
+                <h3 class="font-bold text-sm text-orange-600">樂桃 MM620</h3>
+                <p class="text-xs text-stone-500">TPE 02:00 → NRT 06:30</p>
             </div>
         </main>
 
@@ -148,14 +149,14 @@
                 <h2 class="text-4xl font-light">¥ <span id="total-amount">0</span></h2>
             </div>
             <div class="space-y-4">
-                <input id="exp-name" type="text" placeholder="品名" class="w-full p-4 rounded-2xl bg-white border-none text-sm">
-                <input id="exp-price" type="number" placeholder="金額" class="w-full p-4 rounded-2xl bg-white border-none text-sm">
+                <input id="exp-name" type="text" placeholder="品名" class="w-full p-4 rounded-2xl bg-white border-none shadow-sm text-sm">
+                <input id="exp-price" type="number" placeholder="金額" class="w-full p-4 rounded-2xl bg-white border-none shadow-sm text-sm">
                 <button onclick="addExpense()" class="w-full bg-stone-900 text-white p-4 rounded-2xl font-bold">記錄支出</button>
             </div>
             <ul id="exp-list" class="mt-8 space-y-3"></ul>
         </main>
 
-        <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/80 backdrop-blur-md border-t border-stone-100 flex justify-around p-4 shadow-2xl rounded-t-[2.5rem]">
+        <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/80 backdrop-blur-md border-t border-stone-100 flex justify-around p-4 shadow-2xl rounded-t-[2.5rem] z-50">
             <button onclick="switchTab('itinerary', this)" class="flex flex-col items-center gap-1 nav-active transition-all"><span class="text-xl">🗓️</span><span class="text-[9px]">行程</span></button>
             <button onclick="switchTab('info', this)" class="flex flex-col items-center gap-1 text-stone-300 transition-all"><span class="text-xl">✈️</span><span class="text-[9px]">資訊</span></button>
             <button onclick="switchTab('budget', this)" class="flex flex-col items-center gap-1 text-stone-300 transition-all"><span class="text-xl">💰</span><span class="text-[9px]">記帳</span></button>
@@ -164,30 +165,36 @@
 
     <script>
         const guideData = {
-            'nrt': { title: '成田入境攻略', body: '<p>第3航廈通常是廉航使用，若要搭乘 Skyliner 需走一段路或搭接駁車前往第2航廈鐵道站。</p>', map: '#' },
-            'oshiage': { title: '押上寄物', body: '<p>16:00 才能進房，但可以先把行李給櫃檯寄放。</p>', map: '#' },
-            'asakusa': { title: '淺草導覽', body: '<p>雷門大紅燈籠是必拍點，仲見世通的人形燒推薦嘗試。</p>', map: '#' }
+            'nrt': { title: '成田入境攻略', body: '<p><b>導遊說：</b>第3航廈通關後，建議搭接駁車到第2航廈改搭 Skyliner。</p>', map: '#' },
+            'asakusa': { title: '淺草導遊貼士', body: '<p><b>必拍：</b>雷門燈籠！記得去仲見世通買人形燒。</p>', map: '#' }
         };
 
         function openGuide(key) {
             const data = guideData[key];
-            document.getElementById('guideTitle').innerText = data.title;
-            document.getElementById('guideBody').innerHTML = data.body;
-            document.getElementById('guideModal').style.display = 'block';
+            if(data) {
+                document.getElementById('guideTitle').innerText = data.title;
+                document.getElementById('guideBody').innerHTML = data.body;
+                document.getElementById('guideMapLink').href = data.map;
+                document.getElementById('guideModal').style.display = 'block';
+            }
         }
+
         function closeGuide() { document.getElementById('guideModal').style.display = 'none'; }
 
         function showDay(dayNum) {
             document.querySelectorAll('.day-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.day-tab').forEach(el => el.classList.remove('active'));
-            document.getElementById('day-content-' + dayNum).classList.add('active');
+            const target = document.getElementById('day-content-' + dayNum);
+            if(target) target.classList.add('active');
             event.currentTarget.classList.add('active');
         }
 
         function switchTab(tabName, el) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.getElementById('tab-' + tabName).classList.add('active');
-            document.querySelectorAll('nav button').forEach(btn => { btn.classList.remove('nav-active'); btn.classList.add('text-stone-300'); });
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('nav-active'); btn.classList.add('text-stone-300');
+            });
             el.classList.add('nav-active'); el.classList.remove('text-stone-300');
         }
 
@@ -199,8 +206,8 @@
             const currentTotal = parseInt(totalEl.innerText.replace(/,/g, '')) + parseInt(price);
             totalEl.innerText = currentTotal.toLocaleString();
             const li = document.createElement('li');
-            li.className = "flex justify-between bg-white p-4 rounded-2xl shadow-sm text-sm border border-stone-50";
-            li.innerHTML = `<span>${name}</span><b class="font-mono text-stone-800">¥${parseInt(price).toLocaleString()}</b>`;
+            li.className = "flex justify-between bg-white p-4 rounded-2xl shadow-sm border border-stone-50";
+            li.innerHTML = `<span>${name}</span><b>¥${parseInt(price).toLocaleString()}</b>`;
             document.getElementById('exp-list').prepend(li);
             document.getElementById('exp-name').value = ''; document.getElementById('exp-price').value = '';
         }
