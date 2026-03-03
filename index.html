@@ -9,12 +9,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="日本旅遊">
     
-    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj4KICA8IS0tIOWSjOeni+advOizqiAtLT4KICA8cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgZmlsbD0iI0Y4RjdGMiIgcng9IjQwIi8+KSA8IS0tIOOCreODoOODqeOCueODiOauoeW7qiAtLT4KICA8IS0tIOW4tuW6p+W5v+W5v+iMv+S7o+W5v+azqeizqiAtLT4KICA8ZyBvcGFjaXR5PSIwLjU5Ij4KICAgIDxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjEiIGZpbGw9IiNEMUQ1REIiLz4KICAgIDxjaXJjbGUgY3g9IjE3MCIgY3k9IjE3MCIgcj0iMSIgZmlsbD0iI0QxRDVEQiIvPgKICAgIDxjaXJjbGUgY3g9IjEwIiBjeT0iMTcwIiByPSIxIiBmaWxsPSIjRDFFNURCIi8+KSAKICAgIDxjaXJjbGUgY3g9IjE3MCIgY3k9IjAxMCIgcj0iMSIgZmlsbD0iI0QxRDVEQiIvPgogIDwvZz4KICAKICA8IS0tIOW4tuW6p+i8u+m7niAtLT4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjkwIiByPSI0NSIgZmlsbD0iI0U2MDAxMiIvPgogIAogIDwhLS0g6Ye46Jid55S45Yiw5aSq6Zm957ea5qKdIC0tPgogIDxwYXRoIGQ9Ik05MCA0NUM5MCA0NSAxMTUuOTEgNzguOTEgMTMxLjkxIDk4LjkxQzEzMS45MSA5OC45MSAxMDIuNDUgMTE4LjE4IDY1LjQ1IDEwMC45MUM2NS40NSAxMDAuOTEgNzQuMDkgNzcuNzMgOTAgNDVaIiBmaWxsPSJ3aGl0ZSIvPgogIDxwYXRoIGQ9Ik05MCA0NUM3NC4wOSA3Ny43MyA2NS40NSAxMDAuOTEgNjUuNDUgMTAwLjkxQzY1LjQ1IDEwMC45MSA0OS40NCA4NC45NCAzMC45NCA2OS40NUMzMC45NCA2OS40NSA1NS40NSA0OC4xOCA5MCA0NVoiIGZpbGw9IndoaXRlIi8+CiAgPHBhdGggZD0iTTkwIDQ1QzgxLjkxIDcwLjkxIDU0LjA5IDczLjYzIDU0LjA5IDczLjYzQzU0LjA5IDczLjYzIDY0LjczIDQ2Ljg5IDkwIDQ1WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj4KICA8cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgZmlsbD0iI0Y4RjdGMiIgcng9IjQwIi8+CiAgPGNpcmNsZSBjeD0iOTAiIGN5PSI5MCIgcj0iNDUiIGZpbGw9IiNFNjAwMTIiLz4KICA8cGF0aCBkPSJNOTAgNDVMMTMyIDEwMEg0OEw5MCA0NVoiIGZpbGw9IndoaXRlIi8+CiAgPHBhdGggZD0iTTcwIDcwaDQwdjEwSDcwVnoiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjMiLz4KPC9zdmc+">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
-        body { background-color: #F8F7F2; font-family: 'Noto Sans JP', sans-serif; -webkit-tap-highlight-color: transparent; padding-bottom: env(safe-area-inset-bottom, 28px); }
+        body { background-color: #F8F7F2; font-family: 'Noto Sans JP', sans-serif; -webkit-tap-highlight-color: transparent; }
         .day-tab.active { background-color: #1A1A1A; color: white; transform: scale(1.05); }
         .day-content { display: none; }
         .day-content.active { display: block; }
@@ -26,11 +26,12 @@
         .timeline-item { position: relative; padding-left: 2rem; border-left: 1px solid #E5E7EB; margin-bottom: 1.5rem; }
         .timeline-item::before { content: ''; position: absolute; left: -5px; top: 0; width: 9px; height: 9px; background: #D1D5DB; border-radius: 50%; }
         .timeline-active::before { background: #1A1A1A; width: 11px; height: 11px; left: -6px; }
+        
+        /* 導遊彈窗 */
         .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-blur: 4px; }
         .modal-content { background: white; margin: 15% auto; padding: 24px; border-radius: 24px; width: 85%; max-width: 350px; position: relative; }
         
-        /* 簡約日式圖案顏色 */
-        .jp-icon { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .jp-icon { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
     </style>
 </head>
 <body class="pb-28">
@@ -41,12 +42,10 @@
                 <p class="text-[10px] text-stone-400 font-mono tracking-widest uppercase">Tokyo & Fujisan 2026</p>
             </div>
             <div class="w-10 h-10">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
-                <circle cx="90" cy="90" r="45" fill="#E60012"/>
-                <path d="M90 45C90 45 115.91 78.91 131.91 98.91C131.91 98.91 102.45 118.18 65.45 100.91C65.45 100.91 74.09 77.73 90 45Z" fill="white"/>
-                <path d="M90 45C74.09 77.73 65.45 100.91 65.45 100.91C65.45 100.91 49.44 84.94 30.94 69.45C30.94 69.45 55.45 48.18 90 45Z" fill="white"/>
-                <path d="M90 45C81.91 70.91 54.09 73.63 54.09 73.63C54.09 73.63 64.73 46.89 90 45Z" fill="white"/>
-              </svg>
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="30" fill="#E60012"/>
+                    <path d="M50 35 L75 75 L25 75 Z" fill="white"/>
+                </svg>
             </div>
         </header>
 
@@ -65,237 +64,205 @@
         </div>
 
         <main id="tab-itinerary" class="tab-content active p-6">
-            
             <div id="day-content-1" class="day-content active space-y-6">
                 <div class="flex items-center justify-between bg-white p-4 rounded-2xl border border-stone-100 shadow-sm">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 text-orange-500 jp-icon">
-                          <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="4"/>
-                            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
-                            <path d="M18.12 16.51A7.5 7.5 0 0 0 7.5 7.5a1.5 1.5 0 0 0 0 3A7.5 7.5 0 0 0 16.5 18.12a1.5 1.5 0 0 0 3 0" fill="currentColor"/>
-                          </svg>
-                        </div>
+                        <svg class="w-8 h-8 text-orange-400 jp-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
                         <div>
-                            <p class="text-[10px] text-stone-400 font-bold uppercase tracking-widest">Tokyo Weather</p>
-                            <p class="text-sm font-bold text-stone-800">18°C /  晴時多雲 </p>
+                            <p class="text-[10px] text-stone-400 font-bold uppercase">Tokyo Weather</p>
+                            <p class="text-sm font-bold text-stone-800">18°C / 晴時多雲</p>
                         </div>
                     </div>
-                    <p class="text-[10px] text-stone-400 italic"> 降水  10% </p>
                 </div>
-
                 <div class="mb-4">
-                    <h2 class="text-xl font-bold mb-4">04/18 ( 六 )  淺草巡禮 </h2>
-                    <img src="https://images.unsplash.com/photo-1542931287-023b922fa89b?auto=format&fit=crop&w=800&q=80" class="w-full h-40 object-cover rounded-3xl shadow-sm mb-4" alt="Senso-ji">
+                    <h2 class="text-xl font-bold mb-4">04/18 (六) 淺草巡禮</h2>
+                    <img src="https://images.unsplash.com/photo-1542931287-023b922fa89b?auto=format&fit=crop&w=800&q=80" class="w-full h-44 object-cover rounded-3xl shadow-sm mb-4">
                 </div>
-
                 <div class="space-y-3">
                     <div onclick="openGuide('nrt')" class="bg-white p-5 rounded-3xl border border-stone-100 shadow-sm active:scale-95 transition-all">
                         <div class="flex justify-between items-center">
-                            <div>
-                                <span class="text-[10px] font-bold text-stone-400">06:30</span>
-                                <h3 class="font-bold text-sm"> 抵達成田  NRT </h3>
-                            </div>
-                            <span class="text-stone-300 text-xs"> 詳情  > </span>
+                            <div><span class="text-[10px] font-bold text-stone-400">06:30</span><h3 class="font-bold text-sm">抵達成田 NRT</h3></div>
+                            <span class="text-stone-300 text-xs">攻略 ></span>
                         </div>
                     </div>
-
                     <div onclick="openGuide('oshiage')" class="bg-white p-5 rounded-3xl border border-stone-100 shadow-sm active:scale-95 transition-all">
                         <div class="flex justify-between items-center">
-                            <div>
-                                <span class="text-[10px] font-bold text-stone-400">09:30</span>
-                                <h3 class="font-bold text-sm"> 押上  Wing Stay </h3>
-                            </div>
-                            <span class="text-stone-300 text-xs"> 詳情  > </span>
+                            <div><span class="text-[10px] font-bold text-stone-400">09:30</span><h3 class="font-bold text-sm">押上 Wing Stay</h3></div>
+                            <span class="text-stone-300 text-xs">寄物 ></span>
                         </div>
                     </div>
-
                     <div onclick="openGuide('asakusa')" class="bg-white p-5 rounded-3xl border border-stone-100 shadow-sm active:scale-95 transition-all">
                         <div class="flex justify-between items-center">
-                            <div>
-                                <span class="text-[10px] font-bold text-stone-400">11:00</span>
-                                <h3 class="font-bold text-sm"> 淺草雷門  &  仲見世通 </h3>
-                            </div>
-                            <span class="text-stone-300 text-xs"> 詳情  > </span>
+                            <div><span class="text-[10px] font-bold text-stone-400">11:00</span><h3 class="font-bold text-sm">淺草雷門 & 仲見世通</h3></div>
+                            <span class="text-stone-300 text-xs">攻略 ></span>
                         </div>
                     </div>
-
                     <div onclick="openGuide('ueno')" class="bg-white p-5 rounded-3xl border border-stone-100 shadow-sm active:scale-95 transition-all">
                         <div class="flex justify-between items-center">
-                            <div>
-                                <span class="text-[10px] font-bold text-stone-400">15:00</span>
-                                <h3 class="font-bold text-sm"> 上野阿美橫丁 </h3>
-                            </div>
-                            <span class="text-stone-300 text-xs"> 詳情  > </span>
+                            <div><span class="text-[10px] font-bold text-stone-400">15:00</span><h3 class="font-bold text-sm">上野阿美橫丁</h3></div>
+                            <span class="text-stone-300 text-xs">攻略 ></span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="day-content-2" class="day-content space-y-2">
-                <div class="mb-6"><h2 class="text-xl font-bold">04/19 ( 日 )  晴空塔 </h2></div>
-                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">10:30</span><h3 class="font-bold text-sm"> 敘敘苑午餐 </h3><p class="text-xs text-stone-500"> 晴空塔店景觀午餐 </p></div>
-                <div class="timeline-item"><span class="text-[10px] font-bold text-stone-400">13:00</span><h3 class="font-bold text-sm"> 晴空塔商圈 </h3><p class="text-xs text-stone-500"> 墨田水族館、購物 </p></div>
-            </div>
-
-            <div id="day-content-3" class="day-content space-y-2">
-                <div class="mb-6"><h2 class="text-xl font-bold">04/20 ( 一 )  湘南橫濱 </h2></div>
-                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">09:00</span><h3 class="font-bold text-sm"> 前往鐮倉 </h3><p class="text-xs text-stone-500"> 江之島電鐵之旅 </p></div>
-            </div>
-
-            <div id="day-content-4" class="day-content space-y-2">
-                <div class="mb-6"><h2 class="text-xl font-bold">04/21 ( 二 )  川越池袋 </h2></div>
-                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">10:00</span><h3 class="font-bold text-sm"> 小江戶川越 </h3><p class="text-xs text-stone-500"> 老街散步、冰川神社 </p></div>
-            </div>
-
-            <div id="day-content-5" class="day-content space-y-2">
-                <div class="mb-6"><h2 class="text-xl font-bold">04/22 ( 三 )  迪士尼 </h2></div>
-                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">08:00</span><h3 class="font-bold text-sm"> 東京迪士尼樂園 </h3><p class="text-xs text-stone-500"> 全日遊玩 </p></div>
-            </div>
-
-            <div id="day-content-6" class="day-content space-y-2">
-                <div class="mb-6"><h2 class="text-xl font-bold">04/23 ( 四 )  東京塔賽馬 </h2></div>
-                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">14:00</span><h3 class="font-bold text-sm"> 東京鐵塔 </h3><p class="text-xs text-stone-500"> 景觀台 </p></div>
-                <div class="timeline-item"><span class="text-[10px] font-bold text-stone-400">18:00</span><h3 class="font-bold text-sm"> 大井賽馬場 </h3><p class="text-xs text-stone-500"> 夜間賽馬體驗 </p></div>
-            </div>
-
-            <div id="day-content-7" class="day-content space-y-2">
-                <div class="mb-6"><h2 class="text-xl font-bold">04/24 ( 五 )  富士山自駕 </h2></div>
-                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">09:00</span><h3 class="font-bold text-sm"> 租車出發 </h3><p class="text-xs text-stone-500"> 前往河口湖 / 本栖湖 </p></div>
-            </div>
-
-            <div id="day-content-8" class="day-content space-y-2">
-                <div class="mb-6"><h2 class="text-xl font-bold">04/25 ( 六 )  展望與湖景 </h2></div>
-                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">10:00</span><h3 class="font-bold text-sm"> 大石公園 </h3><p class="text-xs text-stone-500"> 富士山景觀 </p></div>
-            </div>
-
-            <div id="day-content-9" class="day-content space-y-2">
-                <div class="mb-6"><h2 class="text-xl font-bold">04/26 ( 日 )  返台行程 </h2></div>
-                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">13:00</span><h3 class="font-bold text-sm"> 前往成田機場 </h3><p class="text-xs text-stone-500"> 機場免稅店最後採買 </p></div>
-            </div>
-            
-            <p class="text-center py-10 text-[10px] text-stone-300 uppercase tracking-widest italic">Enjoy your trip </p>
-        </main>
-
-        <div id="guideModal" class="modal" onclick="closeGuide()">
-            <div class="modal-content" onclick="event.stopPropagation()">
-                <h4 id="guideTitle" class="text-lg font-bold mb-2 text-stone-800"></h4>
-                <div id="guideBody" class="text-xs text-stone-500 leading-relaxed mb-6 space-y-3"></div>
-                <div id="guideAction" class="flex justify-between items-center">
-                    <button onclick="closeGuide()" class="text-[10px] text-stone-400 font-bold uppercase"> 關閉 </button>
-                    <a id="guideMapLink" href="#" class="btn-map"> 📍   地圖 </a>
+            <div id="day-content-2" class="day-content space-y-4">
+                <h2 class="text-xl font-bold">04/19 (日) 晴空塔</h2>
+                <div class="timeline-item timeline-active">
+                    <span class="text-[10px] font-bold text-stone-400">10:30</span>
+                    <h3 class="font-bold text-sm">敘敘苑午餐</h3>
+                    <p class="text-xs text-stone-500">晴空塔 30F 景觀餐點</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="text-[10px] font-bold text-stone-400">13:00</span>
+                    <h3 class="font-bold text-sm">晴空塔商圈</h3>
+                    <p class="text-xs text-stone-500">墨田水族館、購物</p>
                 </div>
             </div>
-        </div>
+
+            <div id="day-content-3" class="day-content space-y-4">
+                <h2 class="text-xl font-bold">04/20 (一) 湘南橫濱</h2>
+                <div class="timeline-item timeline-active">
+                    <span class="text-[10px] font-bold text-stone-400">09:00</span>
+                    <h3 class="font-bold text-sm">前往鐮倉</h3>
+                    <p class="text-xs text-stone-500">江之島電鐵之旅</p>
+                </div>
+            </div>
+
+            <div id="day-content-4" class="day-content space-y-4">
+                <h2 class="text-xl font-bold">04/21 (二) 川越池袋</h2>
+                <div class="timeline-item timeline-active">
+                    <span class="text-[10px] font-bold text-stone-400">10:00</span>
+                    <h3 class="font-bold text-sm">小江戶川越</h3>
+                    <p class="text-xs text-stone-500">老街散步、冰川神社</p>
+                </div>
+            </div>
+
+            <div id="day-content-5" class="day-content space-y-4">
+                <h2 class="text-xl font-bold">04/22 (三) 迪士尼</h2>
+                <div class="timeline-item timeline-active">
+                    <span class="text-[10px] font-bold text-stone-400">08:00</span>
+                    <h3 class="font-bold text-sm">東京迪士尼樂園</h3>
+                    <p class="text-xs text-stone-500">全日暢玩</p>
+                </div>
+            </div>
+
+            <div id="day-content-6" class="day-content space-y-4">
+                <h2 class="text-xl font-bold">04/23 (四) 東京塔賽馬</h2>
+                <div class="timeline-item timeline-active">
+                    <span class="text-[10px] font-bold text-stone-400">14:00</span>
+                    <h3 class="font-bold text-sm">東京鐵塔</h3>
+                    <p class="text-xs text-stone-500">展望台觀光</p>
+                </div>
+            </div>
+
+            <div id="day-content-7" class="day-content space-y-4">
+                <h2 class="text-xl font-bold">04/24 (五) 富士山自駕</h2>
+                <div class="timeline-item timeline-active">
+                    <span class="text-[10px] font-bold text-stone-400">09:00</span>
+                    <h3 class="font-bold text-sm">租車出發</h3>
+                    <p class="text-xs text-stone-500">前往河口湖、本栖湖</p>
+                </div>
+            </div>
+
+            <div id="day-content-8" class="day-content space-y-4">
+                <h2 class="text-xl font-bold">04/25 (六) 展望與湖景</h2>
+                <div class="timeline-item timeline-active">
+                    <span class="text-[10px] font-bold text-stone-400">10:00</span>
+                    <h3 class="font-bold text-sm">大石公園</h3>
+                    <p class="text-xs text-stone-500">富士山景觀</p>
+                </div>
+            </div>
+
+            <div id="day-content-9" class="day-content space-y-4">
+                <h2 class="text-xl font-bold">04/26 (日) 返台</h2>
+                <div class="timeline-item timeline-active">
+                    <span class="text-[10px] font-bold text-stone-400">13:00</span>
+                    <h3 class="font-bold text-sm">前往成田機場</h3>
+                    <p class="text-xs text-stone-500">最後採買與報到</p>
+                </div>
+            </div>
+
+            <p class="text-center py-10 text-[10px] text-stone-300 uppercase tracking-widest italic">Enjoy your trip</p>
+        </main>
 
         <main id="tab-info" class="tab-content p-6 space-y-6">
             <section class="space-y-4">
-                <h2 class="text-lg font-bold text-stone-800 flex items-center gap-2">
-                  <div class="w-6 h-6 text-stone-800 jp-icon">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-1.1.1-1.3.6l-.3.9c-.2.5 0 1.1.5 1.4l6.9 3.8-3.8 3.8-2-.3c-.5-.1-1.1.1-1.3.6l-.3.9c-.2.5 0 1.1.5 1.4l1.9 1.1 1.1 1.9c.3.5.9.7 1.4.5l.9-.3c.5-.2.7-.8.6-1.3l-.3-2 3.8-3.8 3.8 6.9c.3.5.9.7 1.4.5l.9-.3c.5-.2.7-.8.6-1.3Z"/>
-                    </svg>
-                  </div>
-                   航班資訊 
-                </h2>
-                <div class="space-y-3">
-                    <div class="bg-white rounded-3xl p-5 shadow-sm border border-stone-100 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 bg-orange-100 text-orange-600 px-3 py-1 text-[10px] font-bold rounded-bl-xl"> 去程  Departure </div>
-                        <h3 class="font-bold text-sm"> 樂桃航空  MM620 </h3>
-                        <p class="text-[10px] text-stone-400">2026/04/18 ( 六 ) </p>
-                        <div class="grid grid-cols-2 gap-4 border-t mt-3 pt-3">
-                            <div><p class="text-[9px] text-stone-400 uppercase">TPE  起飛 </p><p class="text-sm font-bold">02:00 ( 第 1 航廈 ) </p></div>
-                            <div><p class="text-[9px] text-stone-400 uppercase">NRT  抵達 </p><p class="text-sm font-bold">06:30 ( 第 3 航廈 ) </p></div>
-                        </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-stone-800 jp-icon" viewBox="0 0 24 24"><path d="M17.8 19.2 L16 11 L19.5 7.5 C21 6 21.5 4 21 3 C20 2.5 18 3 16.5 4.5 L13 8 L4.8 6.2 L3.5 6.8 L10.4 10.6 L6.6 14.4 L4.6 14.1 L3.3 14.7 L5.2 15.8 L6.3 17.7 L7.2 16.8 L6.9 14.8 L10.7 11 L17.6 17.9 L17.8 19.2 Z"/></svg>
+                    <h2 class="text-lg font-bold">航班資訊</h2>
+                </div>
+                <div class="bg-white rounded-3xl p-5 shadow-sm border border-stone-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-orange-100 text-orange-600 px-3 py-1 text-[10px] font-bold rounded-bl-xl">去程</div>
+                    <h3 class="font-bold text-sm">樂桃 MM620</h3>
+                    <div class="grid grid-cols-2 gap-4 mt-3">
+                        <div><p class="text-[9px] text-stone-400">TPE 起飛</p><p class="text-sm font-bold">02:00 (T1)</p></div>
+                        <div><p class="text-[9px] text-stone-400">NRT 抵達</p><p class="text-sm font-bold">06:30 (T3)</p></div>
                     </div>
                 </div>
             </section>
+            
             <section class="space-y-4">
-                <h2 class="text-lg font-bold text-stone-800 flex items-center gap-2">
-                  <div class="w-6 h-6 text-stone-800 jp-icon">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M3 9.5 12 4l9 5.5"/>
-                      <path d="M5 11v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-8"/>
-                      <path d="m9 11 3 3 3-3"/>
-                    </svg>
-                  </div>
-                   住宿資訊 
-                </h2>
-                <div class="space-y-3">
-                    <div class="bg-white rounded-3xl p-5 shadow-sm border border-stone-100">
-                        <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-sm">D1: Wing Stay ( 押上 ) </h3><a href="https://maps.google.com/?q=Wing+Stay+Oshiage" class="btn-map"> 📍   地圖 </a></div>
-                        <p class="text-[11px] text-stone-500 italic"> 入住  16:00 /  退房  10:00 </p>
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-stone-800 jp-icon" viewBox="0 0 24 24"><path d="M3 9.5 L12 4 L21 9.5 V20 A2 2 0 0 1 19 22 H5 A2 2 0 0 1 3 20 Z"/><path d="M9 22 V12 H15 V22"/></svg>
+                    <h2 class="text-lg font-bold">住宿資訊</h2>
+                </div>
+                <div class="bg-white rounded-3xl p-5 shadow-sm border border-stone-100">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-bold text-sm">Wing Stay (押上)</h3>
+                        <a href="https://maps.google.com" class="btn-map">📍 地圖</a>
                     </div>
+                    <p class="text-[11px] text-stone-500 italic mt-1">D1 入住 16:00 / 退房 10:00</p>
                 </div>
             </section>
         </main>
 
         <main id="tab-budget" class="tab-content p-6">
-            <div class="bg-stone-900 rounded-3xl p-8 text-white mb-8 shadow-xl text-center">
-                <p class="text-[10px] opacity-40 uppercase tracking-widest mb-2">Total Budget </p>
+            <div class="bg-stone-900 rounded-3xl p-8 text-white mb-8 text-center">
+                <p class="text-[10px] opacity-40 uppercase mb-2 tracking-widest">Total Spent</p>
                 <h2 class="text-4xl font-light">¥ <span id="total-amount">0</span></h2>
             </div>
             <div class="space-y-4">
-                <input id="exp-name" type="text" placeholder=" 品名 " class="w-full p-4 rounded-2xl bg-white border-none text-sm shadow-sm">
-                <input id="exp-price" type="number" placeholder=" 金額 " class="w-full p-4 rounded-2xl bg-white border-none text-sm shadow-sm">
-                <button onclick="addExpense()" class="w-full bg-stone-900 text-white p-4 rounded-2xl font-bold"> 記錄支出 </button>
+                <input id="exp-name" type="text" placeholder="品名" class="w-full p-4 rounded-2xl bg-white border-none text-sm shadow-sm">
+                <input id="exp-price" type="number" placeholder="金額 (JPY)" class="w-full p-4 rounded-2xl bg-white border-none text-sm shadow-sm">
+                <button onclick="addExpense()" class="w-full bg-stone-900 text-white p-4 rounded-2xl font-bold">記錄支出</button>
             </div>
             <ul id="exp-list" class="mt-8 space-y-3"></ul>
         </main>
 
         <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/80 backdrop-blur-md border-t border-stone-100 flex justify-around p-4 shadow-2xl rounded-t-[2.5rem] z-50">
-            <button onclick="switchTab('itinerary', this)" class="flex flex-col items-center gap-1 nav-active transition-all">
-              <div class="w-7 h-7 jp-icon">
-                <svg viewBox="0 0 24 24">
-                  <rect width="18" height="18" x="3" y="4" rx="2"/>
-                  <path d="M3 10h18M16 2v4M8 2v4M7 14h.01M12 14h.01M17 14h.01M7 18h.01M12 18h.01M17 18h.01"/>
-                </svg>
-              </div>
-              <span class="text-[9px]"> 行程 </span>
+            <button onclick="switchTab('itinerary', this)" class="flex flex-col items-center gap-1 nav-active">
+                <svg class="w-6 h-6 jp-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                <span class="text-[9px]">行程</span>
             </button>
-            <button onclick="switchTab('info', this)" class="flex flex-col items-center gap-1 text-stone-300 transition-all">
-              <div class="w-7 h-7 jp-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-1.1.1-1.3.6l-.3.9c-.2.5 0 1.1.5 1.4l6.9 3.8-3.8 3.8-2-.3c-.5-.1-1.1.1-1.3.6l-.3.9c-.2.5 0 1.1.5 1.4l1.9 1.1 1.1 1.9c.3.5.9.7 1.4.5l.9-.3c.5-.2.7-.8.6-1.3l-.3-2 3.8-3.8 3.8 6.9c.3.5.9.7 1.4.5l.9-.3c.5-.2.7-.8.6-1.3l-.3-2 3.8-3.8 3.8 6.9c.3.5.9.7 1.4.5l.9-.3c.5-.2.7-.8.6-1.3l-.3-2 3.8-3.8 3.8 6.9c.3.5.9.7 1.4.5l.9-.3c.5-.2.7-.8.6-1.3l-.3-2 3.8-3.8 3.8 6.9c.3.5.9.7 1.4.5l.9-.3c.5-.2.7-.8.6-1.3Z"/>
-                </svg>
-              </div>
-              <span class="text-[9px]"> 資訊 </span>
+            <button onclick="switchTab('info', this)" class="flex flex-col items-center gap-1 text-stone-300">
+                <svg class="w-6 h-6 jp-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                <span class="text-[9px]">資訊</span>
             </button>
-            <button onclick="switchTab('budget', this)" class="flex flex-col items-center gap-1 text-stone-300 transition-all">
-              <div class="w-7 h-7 jp-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M21 7H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Zm0-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2h16Z"/>
-                  <path d="M18 14.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" fill="currentColor"/>
-                </svg>
-              </div>
-              <span class="text-[9px]"> 記帳 </span>
+            <button onclick="switchTab('budget', this)" class="flex flex-col items-center gap-1 text-stone-300">
+                <svg class="w-6 h-6 jp-icon" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M22 10H2"/><circle cx="17" cy="14" r="1.5"/></svg>
+                <span class="text-[9px]">記帳</span>
             </button>
         </nav>
+
+        <div id="guideModal" class="modal" onclick="closeGuide()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <h4 id="guideTitle" class="text-lg font-bold mb-2"></h4>
+                <div id="guideBody" class="text-xs text-stone-500 leading-relaxed mb-6 space-y-3"></div>
+                <div class="flex justify-between items-center">
+                    <button onclick="closeGuide()" class="text-[10px] text-stone-400 font-bold uppercase">關閉</button>
+                    <a id="guideMapLink" href="#" class="btn-map">📍 開啟導航</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
-        // 導遊攻略數據
         const guideData = {
-            'nrt': {
-                title: ' 成田機場入境攻略 ',
-                body: '<p> 📍  <b> 導遊說： </b> 第 3 航廈通常是廉航使用，若要搭乘  Skyliner  需走一段路或搭接駁車前往第 2 航廈鐵道站。 </p><p> 🍱  <b> 攻略： </b> 入境後可以先買好  Suica  或使用  iPhone  綁定。機場內有許多扭蛋機可以先把零錢消化掉！ </p>',
-                map: 'https://www.google.com/maps?q=Narita+Airport+Terminal+3 '
-            },
-            'oshiage': {
-                title: ' 押上  Wing Stay  寄物 ',
-                body: '<p> 🏨  <b> 簡介： </b> 鄰近晴空塔的精緻住宿。16:00 才能入房，但我們可以先寄放行李，輕鬆出門。 </p><p> 🍦  <b> 附近： </b> 步行5分鐘就有便利商店，出發前可以買杯咖啡。 </p>',
-                map: 'https://www.google.com/maps?q=Wing+Stay+Oshiage '
-            },
-            'asakusa': {
-                title: ' 淺草導遊小貼士 ',
-                body: '<p> 🏮  <b> 必拍照： </b> 雷門大紅燈籠！走到仲見世通時，推薦嚐嚐「人形燒」。 </p><p> ⛩️  <b> 參拜： </b> 進入淺草寺主殿前，記得先到水池淨手，再到香爐前燻香帶走好運。 </p>',
-                map: 'https://www.google.com/maps?q=Senso-ji '
-            },
-            'ueno': {
-                title: ' 上野阿美橫丁散策 ',
-                body: '<p> 🛍️  <b> 攻略： </b> 這裡是採買藥妝、零食最便宜的地方之一。二木的菓子是必逛點。 </p><p> 🍤  <b> 必吃： </b> 推薦附近的「大統領」居酒屋或平價海鮮丼，氛圍非常有日本街頭感。 </p>',
-                map: 'https://www.google.com/maps?q=Ameyoko '
-            }
+            'nrt': { title: '成田入境攻略', body: '<p>📍 <b>導遊說：</b>第3航廈通常是廉航，建議入境後跟著「鐵道」標誌走往第2航廈搭 Skyliner。</p>', map: 'https://maps.google.com' },
+            'oshiage': { title: '押上寄物說明', body: '<p>🏨 <b>攻略：</b>16:00 才開放進房，可先寄放行李。附近晴空塔內有許多美食可先墊肚子。</p>', map: 'https://maps.google.com' },
+            'asakusa': { title: '淺草導遊小貼士', body: '<p>🏮 <b>必拍照：</b>雷門大燈籠！仲見世通推薦嚐嚐人形燒。參拜前記得先淨手。</p>', map: 'https://maps.google.com' },
+            'ueno': { title: '上野阿美橫丁', body: '<p>🛍️ <b>攻略：</b>採買藥妝、零食最划算的地方。推薦二木的菓子與大統領居酒屋。</p>', map: 'https://maps.google.com' }
         };
 
         function openGuide(key) {
@@ -305,16 +272,12 @@
             document.getElementById('guideMapLink').href = data.map;
             document.getElementById('guideModal').style.display = 'block';
         }
-
-        function closeGuide() {
-            document.getElementById('guideModal').style.display = 'none';
-        }
-
+        function closeGuide() { document.getElementById('guideModal').style.display = 'none'; }
+        
         function showDay(dayNum) {
             document.querySelectorAll('.day-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.day-tab').forEach(el => el.classList.remove('active'));
-            const targetDay = document.getElementById('day-content-' + dayNum);
-            if(targetDay) targetDay.classList.add('active');
+            document.getElementById('day-content-' + dayNum).classList.add('active');
             event.currentTarget.classList.add('active');
             window.scrollTo(0,0);
         }
