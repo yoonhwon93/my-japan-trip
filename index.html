@@ -22,8 +22,9 @@
         .nav-active { color: #1A1A1A; font-weight: bold; border-top: 2px solid #1A1A1A; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .btn-map { background: #4285F4; color: white; border-radius: 8px; padding: 4px 12px; font-size: 11px; display: inline-flex; align-items: center; gap: 4px; }
-        
-        /* 導遊彈窗樣式 */
+        .timeline-item { position: relative; padding-left: 2rem; border-left: 1px solid #E5E7EB; margin-bottom: 1.5rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -5px; top: 0; width: 9px; height: 9px; background: #D1D5DB; border-radius: 50%; }
+        .timeline-active::before { background: #1A1A1A; width: 11px; height: 11px; left: -6px; }
         .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-blur: 4px; }
         .modal-content { background: white; margin: 15% auto; padding: 24px; border-radius: 24px; width: 85%; max-width: 350px; position: relative; }
     </style>
@@ -53,7 +54,6 @@
         </div>
 
         <main id="tab-itinerary" class="tab-content active p-6">
-            
             <div id="day-content-1" class="day-content active space-y-6">
                 <div class="flex items-center justify-between bg-white p-4 rounded-2xl border border-stone-100 shadow-sm">
                     <div class="flex items-center gap-3">
@@ -65,64 +65,80 @@
                     </div>
                     <p class="text-[10px] text-stone-400 italic">降水 10%</p>
                 </div>
-
                 <div class="mb-4">
                     <h2 class="text-xl font-bold mb-4">04/18 (六) 淺草巡禮</h2>
                     <img src="https://images.unsplash.com/photo-1542931287-023b922fa89b?auto=format&fit=crop&w=800&q=80" class="w-full h-40 object-cover rounded-3xl shadow-sm mb-4" alt="Senso-ji">
                 </div>
-
                 <div class="space-y-3">
                     <div onclick="openGuide('nrt')" class="bg-white p-5 rounded-3xl border border-stone-100 shadow-sm active:scale-95 transition-all">
                         <div class="flex justify-between items-center">
-                            <div>
-                                <span class="text-[10px] font-bold text-stone-400">06:30</span>
-                                <h3 class="font-bold text-sm">抵達成田 NRT</h3>
-                            </div>
+                            <div><span class="text-[10px] font-bold text-stone-400">06:30</span><h3 class="font-bold text-sm">抵達成田 NRT</h3></div>
                             <span class="text-stone-300 text-xs">詳情 ></span>
                         </div>
                     </div>
-
                     <div onclick="openGuide('oshiage')" class="bg-white p-5 rounded-3xl border border-stone-100 shadow-sm active:scale-95 transition-all">
                         <div class="flex justify-between items-center">
-                            <div>
-                                <span class="text-[10px] font-bold text-stone-400">09:30</span>
-                                <h3 class="font-bold text-sm">押上 Wing Stay</h3>
-                            </div>
+                            <div><span class="text-[10px] font-bold text-stone-400">09:30</span><h3 class="font-bold text-sm">押上 Wing Stay</h3></div>
                             <span class="text-stone-300 text-xs">詳情 ></span>
                         </div>
                     </div>
-
                     <div onclick="openGuide('asakusa')" class="bg-white p-5 rounded-3xl border border-stone-100 shadow-sm active:scale-95 transition-all">
                         <div class="flex justify-between items-center">
-                            <div>
-                                <span class="text-[10px] font-bold text-stone-400">11:00</span>
-                                <h3 class="font-bold text-sm">淺草雷門 & 仲見世通</h3>
-                            </div>
+                            <div><span class="text-[10px] font-bold text-stone-400">11:00</span><h3 class="font-bold text-sm">淺草雷門 & 仲見世通</h3></div>
                             <span class="text-stone-300 text-xs">詳情 ></span>
                         </div>
                     </div>
-
                     <div onclick="openGuide('ueno')" class="bg-white p-5 rounded-3xl border border-stone-100 shadow-sm active:scale-95 transition-all">
                         <div class="flex justify-between items-center">
-                            <div>
-                                <span class="text-[10px] font-bold text-stone-400">15:00</span>
-                                <h3 class="font-bold text-sm">上野阿美橫丁</h3>
-                            </div>
+                            <div><span class="text-[10px] font-bold text-stone-400">15:00</span><h3 class="font-bold text-sm">上野阿美橫丁</h3></div>
                             <span class="text-stone-300 text-xs">詳情 ></span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="day-content-2" class="day-content space-y-2"><div class="mb-6"><h2 class="text-xl font-bold">04/19 (日) 晴空塔</h2></div></div>
-            <div id="day-content-3" class="day-content space-y-2"><div class="mb-6"><h2 class="text-xl font-bold">04/20 (一) 湘南橫濱</h2></div></div>
-            <div id="day-content-4" class="day-content space-y-2"><div class="mb-6"><h2 class="text-xl font-bold">04/21 (二) 川越池袋</h2></div></div>
-            <div id="day-content-5" class="day-content space-y-2"><div class="mb-6"><h2 class="text-xl font-bold">04/22 (三) 迪士尼</h2></div></div>
-            <div id="day-content-6" class="day-content space-y-2"><div class="mb-6"><h2 class="text-xl font-bold">04/23 (四) 東京塔賽馬</h2></div></div>
-            <div id="day-content-7" class="day-content space-y-2"><div class="mb-6"><h2 class="text-xl font-bold">04/24 (五) 富士山自駕</h2></div></div>
-            <div id="day-content-8" class="day-content space-y-2"><div class="mb-6"><h2 class="text-xl font-bold">04/25 (六) 展望與湖景</h2></div></div>
-            <div id="day-content-9" class="day-content space-y-2"><div class="mb-6"><h2 class="text-xl font-bold">04/26 (日) 返台</h2></div></div>
+            <div id="day-content-2" class="day-content space-y-2">
+                <div class="mb-6"><h2 class="text-xl font-bold">04/19 (日) 晴空塔</h2></div>
+                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">10:30</span><h3 class="font-bold text-sm">敘敘苑午餐</h3><p class="text-xs text-stone-500">晴空塔店景觀午餐</p></div>
+                <div class="timeline-item"><span class="text-[10px] font-bold text-stone-400">13:00</span><h3 class="font-bold text-sm">晴空塔商圈</h3><p class="text-xs text-stone-500">墨田水族館、購物</p></div>
+            </div>
 
+            <div id="day-content-3" class="day-content space-y-2">
+                <div class="mb-6"><h2 class="text-xl font-bold">04/20 (一) 湘南橫濱</h2></div>
+                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">09:00</span><h3 class="font-bold text-sm">前往鐮倉</h3><p class="text-xs text-stone-500">江之島電鐵之旅</p></div>
+            </div>
+
+            <div id="day-content-4" class="day-content space-y-2">
+                <div class="mb-6"><h2 class="text-xl font-bold">04/21 (二) 川越池袋</h2></div>
+                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">10:00</span><h3 class="font-bold text-sm">小江戶川越</h3><p class="text-xs text-stone-500">老街散步、冰川神社</p></div>
+            </div>
+
+            <div id="day-content-5" class="day-content space-y-2">
+                <div class="mb-6"><h2 class="text-xl font-bold">04/22 (三) 迪士尼</h2></div>
+                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">08:00</span><h3 class="font-bold text-sm">東京迪士尼樂園</h3><p class="text-xs text-stone-500">全日遊玩</p></div>
+            </div>
+
+            <div id="day-content-6" class="day-content space-y-2">
+                <div class="mb-6"><h2 class="text-xl font-bold">04/23 (四) 東京塔賽馬</h2></div>
+                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">14:00</span><h3 class="font-bold text-sm">東京鐵塔</h3><p class="text-xs text-stone-500">景觀台</p></div>
+                <div class="timeline-item"><span class="text-[10px] font-bold text-stone-400">18:00</span><h3 class="font-bold text-sm">大井賽馬場</h3><p class="text-xs text-stone-500">夜間賽馬體驗</p></div>
+            </div>
+
+            <div id="day-content-7" class="day-content space-y-2">
+                <div class="mb-6"><h2 class="text-xl font-bold">04/24 (五) 富士山自駕</h2></div>
+                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">09:00</span><h3 class="font-bold text-sm">租車出發</h3><p class="text-xs text-stone-500">前往河口湖/本栖湖</p></div>
+            </div>
+
+            <div id="day-content-8" class="day-content space-y-2">
+                <div class="mb-6"><h2 class="text-xl font-bold">04/25 (六) 展望與湖景</h2></div>
+                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">10:00</span><h3 class="font-bold text-sm">大石公園</h3><p class="text-xs text-stone-500">富士山景觀</p></div>
+            </div>
+
+            <div id="day-content-9" class="day-content space-y-2">
+                <div class="mb-6"><h2 class="text-xl font-bold">04/26 (日) 返台行程</h2></div>
+                <div class="timeline-item timeline-active"><span class="text-[10px] font-bold text-stone-400">13:00</span><h3 class="font-bold text-sm">前往成田機場</h3><p class="text-xs text-stone-500">機場免稅店最後採買</p></div>
+            </div>
+            
             <p class="text-center py-10 text-[10px] text-stone-300 uppercase tracking-widest italic">Enjoy your trip</p>
         </main>
 
@@ -139,24 +155,50 @@
 
         <main id="tab-info" class="tab-content p-6 space-y-6">
             <section class="space-y-4">
-                <h2 class="text-lg font-bold text-stone-800 flex items-center gap-2"><span class="text-xl">✈️</span> 航班資訊</h2>
+                <h2 class="text-lg font-bold text-stone-800 flex items-center gap-2">
+                    <span class="text-xl">✈️</span> 航班資訊
+                </h2>
                 <div class="space-y-3">
                     <div class="bg-white rounded-3xl p-5 shadow-sm border border-stone-100 relative overflow-hidden">
                         <div class="absolute top-0 right-0 bg-orange-100 text-orange-600 px-3 py-1 text-[10px] font-bold rounded-bl-xl">去程 Departure</div>
                         <h3 class="font-bold text-sm">樂桃航空 MM620</h3>
+                        <p class="text-[10px] text-stone-400">2026/04/18 (六)</p>
                         <div class="grid grid-cols-2 gap-4 border-t mt-3 pt-3">
                             <div><p class="text-[9px] text-stone-400 uppercase">TPE 起飛</p><p class="text-sm font-bold">02:00 (第1航廈)</p></div>
                             <div><p class="text-[9px] text-stone-400 uppercase">NRT 抵達</p><p class="text-sm font-bold">06:30 (第3航廈)</p></div>
                         </div>
                     </div>
+                    <div class="bg-white rounded-3xl p-5 shadow-sm border border-stone-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-blue-100 text-blue-600 px-3 py-1 text-[10px] font-bold rounded-bl-xl">回程 Return</div>
+                        <h3 class="font-bold text-sm">星宇航空 JX803</h3>
+                        <p class="text-[10px] text-stone-400">2026/04/26 (日)</p>
+                        <div class="grid grid-cols-2 gap-4 border-t mt-3 pt-3">
+                            <div><p class="text-[9px] text-stone-400 uppercase">NRT 起飛</p><p class="text-sm font-bold">16:20 (第2航廈)</p></div>
+                            <div><p class="text-[9px] text-stone-400 uppercase">TPE 抵達</p><p class="text-sm font-bold">18:55 (第1航廈)</p></div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section class="space-y-4">
-                <h2 class="text-lg font-bold text-stone-800 flex items-center gap-2"><span class="text-xl">🏠</span> 住宿資訊</h2>
+                <h2 class="text-lg font-bold text-stone-800 flex items-center gap-2">
+                    <span class="text-xl">🏠</span> 住宿資訊
+                </h2>
                 <div class="space-y-3">
                     <div class="bg-white rounded-3xl p-5 shadow-sm border border-stone-100">
-                        <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-sm">D1: Wing Stay (押上)</h3><a href="https://maps.google.com/?q=Wing+Stay+Oshiage" class="btn-map">📍 地圖</a></div>
+                        <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-sm">D1: Wing Stay (押上)</h3><a href="https://maps.google.com" class="btn-map">📍 地圖</a></div>
                         <p class="text-[11px] text-stone-500 italic">入住 16:00 / 退房 10:00</p>
+                    </div>
+                    <div class="bg-white rounded-3xl p-5 shadow-sm border border-stone-100">
+                        <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-sm">D2-D6: 染の里おちあい (中井)</h3><a href="https://maps.google.com" class="btn-map">📍 地圖</a></div>
+                        <p class="text-[11px] text-stone-500 italic">入住 16:00 / 退房 11:00</p>
+                    </div>
+                    <div class="bg-white rounded-3xl p-5 shadow-sm border border-stone-100">
+                        <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-sm">D7: 浩庵露營場 (本栖湖)</h3><a href="https://maps.google.com" class="btn-map">📍 地圖</a></div>
+                        <p class="text-[11px] text-stone-500 italic">入住 10:30 / 退房 10:00</p>
+                    </div>
+                    <div class="bg-white rounded-3xl p-5 shadow-sm border border-stone-100">
+                        <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-sm">D8: 夢見河口湖 コテージ</h3><a href="https://maps.google.com" class="btn-map">📍 地圖</a></div>
+                        <p class="text-[11px] text-stone-500 italic">入住 15:00~18:00 / 退房 10:00</p>
                     </div>
                 </div>
             </section>
@@ -164,13 +206,13 @@
 
         <main id="tab-budget" class="tab-content p-6">
             <div class="bg-stone-900 rounded-3xl p-8 text-white mb-8 shadow-xl text-center">
-                <p class="text-[10px] opacity-40 uppercase tracking-widest mb-2">Total Budget</p>
+                <p class="text-[10px] opacity-40 uppercase tracking-widest mb-2">Total Budget Spent</p>
                 <h2 class="text-4xl font-light">¥ <span id="total-amount">0</span></h2>
             </div>
             <div class="space-y-4">
-                <input id="exp-name" type="text" placeholder="品名" class="w-full p-4 rounded-2xl bg-white border-none text-sm shadow-sm">
-                <input id="exp-price" type="number" placeholder="金額" class="w-full p-4 rounded-2xl bg-white border-none text-sm shadow-sm">
-                <button onclick="addExpense()" class="w-full bg-stone-900 text-white p-4 rounded-2xl font-bold">記錄支出</button>
+                <input id="exp-name" type="text" placeholder="品名 (如：敘敘苑)" class="w-full p-4 rounded-2xl bg-white border-none text-sm shadow-sm">
+                <input id="exp-price" type="number" placeholder="金額 (日圓)" class="w-full p-4 rounded-2xl bg-white border-none text-sm shadow-sm">
+                <button onclick="addExpense()" class="w-full bg-stone-900 text-white p-4 rounded-2xl font-bold active:scale-95 transition-all">記錄支出</button>
             </div>
             <ul id="exp-list" class="mt-8 space-y-3"></ul>
         </main>
@@ -183,27 +225,26 @@
     </div>
 
     <script>
-        // 導遊攻略數據
         const guideData = {
             'nrt': {
                 title: '成田機場入境攻略',
-                body: '<p>📍 <b>攻略：</b>下飛機後請先連上機場 Wi-Fi，開啟 Visit Japan Web 的 QR Code。通過第3航廈後，跟著「鐵道」標誌走。</p><p>🍱 <b>必買：</b>可以先在航廈門口買一瓶自動販賣機的限定飲料，日本旅遊感瞬間拉滿！</p>',
-                map: 'https://www.google.com/maps?q=Narita+Airport+Terminal+3'
+                body: '<p>📍 <b>導遊說：</b>第3航廈通常是廉航使用，若要搭乘 Skyliner 需走一段路或搭接駁車前往第2航廈鐵道站。</p><p>🍱 <b>攻略：</b>入境後可以先買好 Suica 或使用 iPhone 綁定。機場內有許多扭蛋機可以先把零錢消化掉！</p>',
+                map: 'https://maps.google.com/maps?q=Narita+Airport'
             },
             'oshiage': {
                 title: '押上 Wing Stay 寄物',
-                body: '<p>🏨 <b>簡介：</b>鄰近晴空塔的精緻住宿。16:00 才能入房，但我們可以先寄放行李，輕鬆出門。</p><p>🍦 <b>附近：</b>步行5分鐘就有便利商店，出發前可以買杯咖啡。</p>',
-                map: 'https://www.google.com/maps?q=Wing+Stay+Oshiage'
+                body: '<p>🏠 <b>攻略：</b>旅館通常 16:00 才開放進房，但可以先把行李給櫃檯寄放。押上站就在附近，前往淺草非常方便。</p>',
+                map: 'https://maps.google.com/maps?q=Wing+Stay+Oshiage'
             },
             'asakusa': {
                 title: '淺草導遊小貼士',
-                body: '<p>🏮 <b>必拍：</b>雷門大紅燈籠！走到仲見世通時，推薦嚐嚐「木村家本舖」的人形燒。</p><p>⛩️ <b>參拜：</b>進入淺草寺主殿前，記得先到水池淨手，再到香爐前燻香帶走好運。</p>',
-                map: 'https://www.google.com/maps?q=Senso-ji'
+                body: '<p>🏮 <b>必拍照：</b>雷門大紅燈籠！走到仲見世通時，推薦嚐嚐「人形燒」。</p><p>⛩️ <b>宮略：</b>淺草寺主殿求籤很有名，如果是「凶」記得綁在旁邊的架子上轉運喔！</p>',
+                map: 'https://maps.google.com/maps?q=Senso-ji'
             },
             'ueno': {
                 title: '上野阿美橫丁散策',
-                body: '<p>🛍️ <b>攻略：</b>這裡是藥妝與雜貨的天堂。推薦去「志村商店」看老闆快速裝糖果。</p><p>🍤 <b>必吃：</b>推薦附近的「大統領」居酒屋或平價海鮮丼，氛圍非常有日本街頭感。</p>',
-                map: 'https://www.google.com/maps?q=Ameyoko'
+                body: '<p>🛍️ <b>攻略：</b>這裡是採買藥妝、零食最便宜的地方之一。二木的菓子是必逛點。</p><p>🍱 <b>推薦：</b>阿美橫丁內有許多平價海鮮丼與居酒屋，氛圍感滿滿。</p>',
+                map: 'https://maps.google.com/maps?q=Ameya-Yokocho'
             }
         };
 
@@ -239,8 +280,10 @@
         }
 
         function addExpense() {
-            const name = document.getElementById('exp-name').value;
-            const price = document.getElementById('exp-price').value;
+            const nameEl = document.getElementById('exp-name');
+            const priceEl = document.getElementById('exp-price');
+            const name = nameEl.value;
+            const price = priceEl.value;
             if(!name || !price) return;
             const totalEl = document.getElementById('total-amount');
             const currentTotal = parseInt(totalEl.innerText.replace(/,/g, '')) + parseInt(price);
@@ -249,7 +292,7 @@
             li.className = "flex justify-between bg-white p-4 rounded-2xl shadow-sm text-sm border border-stone-50";
             li.innerHTML = `<span>${name}</span><b class="font-mono text-stone-800">¥${parseInt(price).toLocaleString()}</b>`;
             document.getElementById('exp-list').prepend(li);
-            document.getElementById('exp-name').value = ''; document.getElementById('exp-price').value = '';
+            nameEl.value = ''; priceEl.value = '';
         }
     </script>
 </body>
